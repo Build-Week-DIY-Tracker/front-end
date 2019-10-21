@@ -17,7 +17,13 @@ export default function Login() {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(user); 
-        axios.post('https://lrod-diytracker.herokuapp.com/login', user) 
+        axios.post('https://lrod-diytracker.herokuapp.com/login', "grant_type=password&username=admin&password=password", {
+
+            headers: {
+                Authorization: 'Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }) 
         .then(res => { console.log('RESPONSE', res.data) }) 
         .catch(err => console.log(err.response));
     }
