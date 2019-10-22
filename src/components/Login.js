@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-export default function Login() {
+const Login = props => {
+    console.log(props);
     const [user, setUser] = useState({
         username: '',
         password: '',
@@ -16,15 +18,17 @@ export default function Login() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(user); 
         axios.post('https://lrod-diytracker.herokuapp.com/login', `grant_type=password&username=${user.username}&password=${user.password}`, {
-
             headers: {
                 Authorization: `Basic ${btoa('lambda-client:lambda-secret')}`,
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }) 
-        .then(res => { console.log('RESPONSE', res.data) }) 
+        .then(res => { 
+            console.log('RESPONSE', res.data)
+            localStorage.setItem('token', res.data.access_token)
+            props.history.push('/projectform')
+        }) 
         .catch(err => console.log(err.response));
     }
     return (
@@ -37,3 +41,12 @@ export default function Login() {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        user: state.user,
+    }
+}
+
+
+export default connect(mapStateToProps, {})(Login)
