@@ -1,31 +1,33 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchProjects } from '../actions';
+import { fetchProjects, deleteProject } from '../actions';
 
 const Projects = props => {
-    console.log(props)
     useEffect(() => {
       props.fetchProjects();
-    }, [])
+      console.log('fetching')
+    }, [props.projects.length])
+
+    const handleDelete = e => {
+      props.deleteProject(e.target.id);
+    }
+
   return (
+    <div className = "projects">
     <div className="projects-list">
       {props.projects.map((project, index) => {
         return (
           <div className="note" key={index}>
             <h2>{project.projectname}</h2>
-            <p>Date: {project.date}</p>
-            <h3>Steps</h3>
-            <p>{project.step1}</p>
-            <p>{project.step2}</p>
-            <p>{project.step3}</p>
-            <p>{project.step4}</p>
-            <p>{project.step5}</p>
-            <p>{project.step6}</p>
-            <p>{project.step7}</p>
-            <p>{project.step8}</p>      
+            <div className="likes-container"><h3>Likes:</h3><p className="likes">{project.likes}</p></div>
+            <a id='project-link' href={project.projectlink} target='_blank' rel="noopener noreferrer">Source</a>
+            <Link to={`/projects/edit/${project.projectid}`}><button>Edit</button></Link>
+            <button id={project.projectid}onClick={handleDelete}>Delete</button>
           </div>
         );
       })}
+    </div>
     </div>
   );
 };
@@ -37,4 +39,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { fetchProjects })(Projects);
+export default connect(mapStateToProps, { fetchProjects, deleteProject })(Projects);

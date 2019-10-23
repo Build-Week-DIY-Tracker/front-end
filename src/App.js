@@ -4,6 +4,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Navigation from './components/Navigation';
 import ProjectForm from './components/ProjectForm';
+import EditProject from './components/EditProject';
 import Projects from './components/Projects';
 import PrivateRoute from './components/PrivateRoute'
 import { Route } from "react-router-dom";
@@ -27,10 +28,12 @@ function App() {
         path = "/projectform"
         component = {ProjectForm}
       />
-      <PrivateRoute 
+      <PrivateRoute
+        exact
         path = "/projects"
         component = {Projects}
       />
+      <Route exact path='/projects/edit/:id' component={EditProject} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 export default function RegisterTest() {
     const [user, setUser] = useState({
@@ -19,13 +20,15 @@ export default function RegisterTest() {
         e.preventDefault();
         console.log(user); 
         axios.post('https://lrod-diytracker.herokuapp.com/createnewuser', 
-        user) .then(res => { console.log('RESPONSE', res.data) })
+        user) .then(res => { 
+            return res.status === 200 ? <Redirect to='/' /> : console.log(res);
+        })
         .catch(err => console.log(err.response));
     }
     
     return (
         <div className="user-form">
-          <h2>Register Here!</h2>
+            <h2>Register Here!</h2>
             <form onSubmit={handleSubmit} className="register">
                 <p>Pick a username:</p>
                 <input required type="text" name="username" placeholder="Username" onChange={handleChange} />

@@ -36,7 +36,7 @@ const Login = props => {
             <h2>Sign-in</h2>
             <form onSubmit={handleSubmit}>
                 <p>Username:</p>
-                <input type="text" name="username" placeholder="Username" onChange={handleChange} />
+                <input required type="text" name="username" placeholder="Username" onChange={handleChange} />
                 <p>Password:</p>
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} />
                 <div className="button"><button type="submit">Submit!</button></div>

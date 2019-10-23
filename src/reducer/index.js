@@ -1,5 +1,7 @@
 import {
-    FETCH_PROJECTS
+    FETCH_PROJECTS,
+    DELETE_PROJECT,
+    LIKE_PROJECT,
 } from '../actions';
 
 const initialState = {
@@ -19,6 +21,23 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 projects: action.payload
+            }
+        case DELETE_PROJECT:
+            const projectToRemove = state.projects.find(project => {
+                if(project.projectid.toString() === action.payload.toString()) {
+                    return {
+                        project
+                    }
+                }
+            })
+            return {
+                ...state,
+                projects: [...state.projects].filter(project => project.projectid !== projectToRemove.projectid)
+            }
+        case LIKE_PROJECT:
+            return {
+                ...state,
+
             }
         default: 
             return state;
