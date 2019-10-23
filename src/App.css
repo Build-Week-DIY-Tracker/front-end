@@ -41,18 +41,41 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.register {
- display: flex;
- flex-direction: column;
- width: 40%;
- border: 2px solid black;
- border-radius: 5px;
- padding: 1%;
+
+.user-form p {
+  font-size: 1.2rem;
 }
 
-.register input {
+.user-form button {
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  height: 60px;
+  font-size: 1rem;
+}
+.user-form button:hover {
+  background: #fee7be;
+  font-size: 110%;
+}
+.button {
+  text-align: center;
+  margin-top: 2%;
+}
+form {
+ display: flex;
+ flex-direction: column;
+ width: 30%;
+ /* border: 2px solid black; */
+ border-radius: 5px;
+ padding: 1%;
+ background: #9ed5fe
+}
+
+form input {
   font-size: 1.4rem;
   margin-bottom: 3%;
   border: 2px solid black;
   border-radius: 5px;
 }
+

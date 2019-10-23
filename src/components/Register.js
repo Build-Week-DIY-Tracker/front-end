@@ -33,7 +33,7 @@ export default function RegisterTest() {
                 <input required type="password" name="password" placeholder="Password" onChange={handleChange} />
                 <p>Enter your email:</p>
                 <input required type="text" name="primaryemail" placeholder="Email" onChange={handleChange} />
-                <button type="submit">Submit!</button>
+                <div className="button"><button type="submit">Submit!</button></div>
             </form>
         </div>
     )

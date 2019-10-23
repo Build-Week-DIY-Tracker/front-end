@@ -38,6 +38,13 @@ const ProjectForm = ({ values, touched, errors, status }) => {
                 <Field type= "text" name="step6" placeholder= "Step 6" />
                 <Field type= "text" name="step7" placeholder= "Step 7" />
                 <Field type= "text" name="step8" placeholder= "Step 8" /> */}
+
+                {projects.map(project => (
+                    <div>
+                    <Form><Field type= "text" name="add" placeholder="idk"/></Form>
+                    </div>
+                    ))}
+
                 <button type='submit'>submit here</button>
             </Form>
             <button type='button' onClick={handleClick}>test</button>
