@@ -13,6 +13,10 @@ const Projects = props => {
       props.deleteProject(e.target.id);
     }
 
+    const addLike = e => {
+
+    }
+
   return (
     <div className = "projects">
     <div className="projects-list">
@@ -21,9 +25,12 @@ const Projects = props => {
           <div className="note" key={index}>
             <h2>{project.projectname}</h2>
             <div className="likes-container"><h3>Likes:</h3><p className="likes">{project.likes}</p></div>
+            <div className= "button-container">
+            <i class="far fa-thumbs-up"></i>
             <a id='project-link' href={project.projectlink} target='_blank' rel="noopener noreferrer">Source</a>
             <Link to={`/projects/edit/${project.projectid}`}><button>Edit</button></Link>
-            <button id={project.projectid}onClick={handleDelete}>Delete</button>
+            <button id={project.projectid} onClick={handleDelete}>Delete</button>
+            </div>
           </div>
         );
       })}

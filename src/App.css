@@ -135,13 +135,18 @@ form input {
   padding: 1%;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
   border-radius: 10px;
+}
 
+.note a {
+  background: none;
 }
 
 .likes-container{
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 15%;
 }
 
 .likes {
@@ -149,7 +154,53 @@ form input {
 }
 
 #project-link {
-  background: none;
+  color: white;
   text-decoration: underline;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: .4%;
+  border-radius: 3px;
+  /* background: #3B1E54; */
+  width: 7%;
 }
 
+.note button {
+  color: white;
+  text-decoration: none;
+  padding: .4%;
+  border-radius: 3px;
+  background: #3B1E54;
+  width: 60px;
+  height: 25px;
+  border: none;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+
+.button-container a button {
+  color: white;
+  text-decoration: none;
+  padding: .4%;
+  border-radius: 3px;
+  background: #3B1E54;
+  width: 60px;
+  border: none;
+  height: 25px;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+
+/* .button-container a button {
+  width: 50px;
+} */
+
+a button, .note button:hover {
+  background: #150920
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

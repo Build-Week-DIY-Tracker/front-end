@@ -11,36 +11,21 @@ const ProjectForm = ({ values, touched, errors, status }) => {
         status && setProjects(projects => [...projects, status])
     }, [status])
 
-    const handleClick = e => {
-        e.preventDefault();
-        axiosWithAuth().get('https://lrod-diytracker.herokuapp.com/projects/all')
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-    }
-
     return (
         <div>
-        <h2>Enter Project Info Here</h2>
-        <div className = "project-form">
-            <Form>
-                <p>Project:</p>
-                <Field type="text" name="projectname" placeholder= "Project Name Here" />
-                {touched.project && errors.project && (
-                    <p className= "error">{errors.project}</p>
-                )}
-                <p>Link:</p>
-                <Field type="text" name="projectlink" placeholder= "Link to project" />
-
-                {projects.map(project => (
-                    <div>
-                    <Form><Field type= "text" name="add" placeholder="idk"/></Form>
-                    </div>
-                    ))}
-
-                <div className= "button"><button type='submit'>Submit Project</button></div>
-            </Form>
-            <button type='button' onClick={handleClick}>test</button>
-        </div>
+            <h2>Enter Project Info Here</h2>
+            <div className = "project-form">
+                <Form>
+                    <p>Project:</p>
+                    <Field type="text" name="projectname" placeholder= "Project Name Here" />
+                    {touched.project && errors.project && (
+                        <p className= "error">{errors.project}</p>
+                    )}
+                    <p>Link:</p>
+                    <Field type="text" name="projectlink" placeholder= "Link to project" />
+                    <div className= "button"><button type='submit'>Submit Project</button></div>
+                </Form>
+            </div>
         </div>
     )
 }
