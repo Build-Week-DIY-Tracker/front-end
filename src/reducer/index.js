@@ -34,11 +34,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 projects: [...state.projects].filter(project => project.projectid !== projectToRemove.projectid)
             }
-        case LIKE_PROJECT:
-            return {
-                ...state,
-
-            }
         default: 
             return state;
     }
