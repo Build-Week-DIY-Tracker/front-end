@@ -20,7 +20,7 @@ export default function RegisterTest() {
         e.preventDefault();
         console.log(user); 
         axios.post('https://lrod-diytracker.herokuapp.com/createnewuser', 
-        user) .then(res => { 
+        user).then(res => { 
             return res.status === 200 ? <Redirect to='/' /> : console.log(res);
         })
         .catch(err => console.log(err.response));

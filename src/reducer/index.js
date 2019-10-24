@@ -1,7 +1,6 @@
 import {
     FETCH_PROJECTS,
     DELETE_PROJECT,
-    LIKE_PROJECT,
 } from '../actions';
 
 const initialState = {

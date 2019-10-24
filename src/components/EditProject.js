@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Redirect } from 'react-router-dom';
-import axios from "axios";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { withFormik, Form, Field } from "formik";
-import * as Yup from "yup";
 import { connect } from 'react-redux';
 import { editProjects } from '../actions';
 

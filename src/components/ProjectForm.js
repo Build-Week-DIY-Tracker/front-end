@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { connect } from 'react-redux';
 
 const ProjectForm = ({ values, touched, errors, status }) => {
     const [projects, setProjects] = useState([])
@@ -50,11 +48,4 @@ const FormikProjectForm = withFormik({
     }
 })(ProjectForm);
 
-
-const mapStateToProps = state => {
-    return {
-
-    }
-}
-
-export default connect(null, {})(FormikProjectForm);
+export default FormikProjectForm

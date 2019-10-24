@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -10,12 +10,6 @@ import PrivateRoute from './components/PrivateRoute'
 import { Route } from "react-router-dom";
 
 function App() {
-
-  const [projects, setProjects] = useState([])
-
-  const addNewProject = project => {
-    setProjects([...projects, project])
-  }
 
   return (
     <div className="App">
