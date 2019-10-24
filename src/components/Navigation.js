@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavItem } from 'reactstrap';
+import { Nav } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 const Example = (props) => {
