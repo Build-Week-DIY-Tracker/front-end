@@ -2,36 +2,205 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.navContainer {
+  background-color: #8A5DB0; 
+  padding-top: 1.5%;
 }
 
 .nav {
-  background-color: black;
-  opacity: 0.8;
+  
+  /* opacity: 0.8; */
+  margin: 0;
   height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.App {
+  background: #202020;
+  height: 1000px;
+}
+
+
+
+.projects {
+  background:#202020
+}
+h1 {
+  color: white;
+  margin: 0%;
+  padding: 0%;
+}
+h2 {
+  color: white;
+  margin: 0;
+  margin: 1%;
+}
+
+h3 {
+  color: white;
+}
+
 a {
   color: white;
   text-decoration: none;
   margin-left: 3%;
-  margin-right: 3%
+  margin-right: 3%;
+  padding: .4%;
+  border-radius: 3px;
+  background: #3B1E54;
+  width: 7%;
+}
+
+a:hover {
+  background: #150920
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.project-form button {
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  height: 60px;
+  font-size: 1rem;
+}
+
+.project-form button:hover {
+  background: #fee7be;
+  font-size: 110%;
+}
+
+.user-form button {
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  height: 60px;
+  font-size: 1rem;
+}
+.user-form button:hover {
+  background: #fee7be;
+  font-size: 110%;
+}
+.button {
+  text-align: center;
+  margin-top: 2%;
+}
+form {
+ display: flex;
+ flex-direction: column;
+ width: 30%;
+ border-radius: 5px;
+ padding: 1%;
+ background: #8A5DB0
+}
+
+form input {
+  font-size: 1.4rem;
+  margin-bottom: 3%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+.note {
+  width: 45%;
+  background:#8A5DB0;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+}
+
+.note a {
+  background: none;
+}
+
+.likes-container{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.likes {
+  margin: 1.5%;
+}
+
+#project-link {
+  color: white;
+  text-decoration: underline;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: .4%;
+  border-radius: 3px;
+  /* background: #3B1E54; */
+  width: 7%;
+}
+
+.note button {
+  color: white;
+  text-decoration: none;
+  padding: .4%;
+  border-radius: 3px;
+  background: #3B1E54;
+  width: 60px;
+  height: 25px;
+  border: none;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+
+.button-container a button {
+  color: white;
+  text-decoration: none;
+  padding: .4%;
+  border-radius: 3px;
+  background: #3B1E54;
+  width: 60px;
+  border: none;
+  height: 25px;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
+
+/* .button-container a button {
+  width: 50px;
+} */
+
+a button, .note button:hover {
+  background: #150920
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

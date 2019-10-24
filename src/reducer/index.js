@@ -1,16 +1,39 @@
+import {
+    FETCH_PROJECTS,
+    DELETE_PROJECT,
+    LIKE_PROJECT,
+} from '../actions';
+
 const initialState = {
     user: {
+        id: 0,
         username: '',
-        password: '',
-        email: '',
         role: '',
         projects: []
-    }
+    },
+    projects: []
 }
 
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
+        case FETCH_PROJECTS:
+            return {
+                ...state,
+                projects: action.payload
+            }
+        case DELETE_PROJECT:
+            const projectToRemove = state.projects.find(project => {
+                if(project.projectid.toString() === action.payload.toString()) {
+                    return {
+                        project
+                    }
+                }
+            })
+            return {
+                ...state,
+                projects: [...state.projects].filter(project => project.projectid !== projectToRemove.projectid)
+            }
         default: 
             return state;
     }
