@@ -6,6 +6,7 @@ export const FETCH_PROJECTS = 'FETCH_PROJECTS'
 export const EDIT_PROJECT = 'EDIT_PROJECT'
 export const DELETE_PROJECT = 'DELETE_PROJECT'
 export const LIKE_PROJECT = 'LIKE_PROJECT'
+export const SET_LINK_TEXT = 'SET_LINK_TEXT'
 
 
 export const fetchProjects = () => dispatch => {
@@ -28,4 +29,9 @@ export const deleteProject = (projectId) => dispatch => {
         console.log(res)
     })
     .catch(err => console.log(err));
+}
+
+
+export const setLinkText = (linkText) => dispatch => {
+    dispatch({ type: SET_LINK_TEXT, payload: linkText})
 }

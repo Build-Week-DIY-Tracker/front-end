@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { setLinkText } from '../actions';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
@@ -27,6 +28,7 @@ const Login = props => {
         .then(res => { 
             console.log('RESPONSE', res.data)
             localStorage.setItem('token', res.data.access_token)
+            props.setLinkText('Logout');
             props.history.push('/projectform')
         }) 
         .catch(err => console.log(err.response));
@@ -48,8 +50,9 @@ const Login = props => {
 const mapStateToProps = state => {
     return {
         user: state.user,
+        linktext: state.linktext
     }
 }
 
 
-export default connect(mapStateToProps, {})(Login)
+export default connect(mapStateToProps, { setLinkText })(Login)
