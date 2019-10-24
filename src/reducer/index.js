@@ -1,6 +1,7 @@
 import {
     FETCH_PROJECTS,
     DELETE_PROJECT,
+    SET_LINK_TEXT,
 } from '../actions';
 
 const initialState = {
@@ -10,7 +11,8 @@ const initialState = {
         role: '',
         projects: []
     },
-    projects: []
+    projects: [],
+    linktext: '',
 }
 
 
@@ -32,6 +34,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 projects: [...state.projects].filter(project => project.projectid !== projectToRemove.projectid)
+            }
+        case SET_LINK_TEXT:
+            return {
+                ...state,
+                linktext: action.payload,
             }
         default: 
             return state;
